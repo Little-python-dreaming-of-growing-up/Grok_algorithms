@@ -1,0 +1,28 @@
+def find_smallest(array_for_finding_smallest):
+    """
+    Функция, которая находит наименьший элемент во входном списке
+    Входные параметры:  array_for_finding_smallest (входной массив, в котором необходимо найти элемент с минимальным значением);
+    Выходные параметры:  index_of_smallest_el (Индекс элемента из списка с наименьшим значением)
+    """
+    smallest_el = enter_array[0]
+    # Предположим, что наименьший элемент - первый элемент из списка
+    index_of_smallest_el = 0  # Переменная отвечающая за индекс наименьшего элемента
+    for current_index in range(1, len(array_for_finding_smallest)):
+        if enter_array[current_index] < smallest_el:
+            smallest_el = enter_array[current_index]
+            index_of_smallest_el = current_index
+    return index_of_smallest_el
+
+
+def selection_sort(array_for_selection_sort):
+    """
+    Функция, которая отвечает за сортировку массива (по возрастанию)
+    Входные параметры:  array_for_selection_sort (входной массив, который необходимо отсортировать по возрастанию);
+    Выходные параметры:  sorted_array (Отсортированный массив)
+    """
+    sorted_array = []  # Создадим пустой список, в который в последующем будем добавлять элементы из списка по возрастанию
+    for i in range(len(array_for_selection_sort)):
+        index_of_smallest_el = find_smallest(enter_array)
+        sorted_array.append(enter_array.pop(index_of_smallest_el))
+        #  .pop takes a single argument (index) and removes the item present at that index.
+    return sorted_array
